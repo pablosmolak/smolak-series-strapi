@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ators",
+  "info": {
+    "singularName": "ator",
+    "pluralName": "ators",
+    "displayName": "ator"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "fotos": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "serie": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::serie.serie",
+      "inversedBy": "ators"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "series",
+  "info": {
+    "singularName": "serie",
+    "pluralName": "series",
+    "displayName": "serie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "qtd_temporadas": {
+      "required": true,
+      "type": "integer"
+    },
+    "classificacao_indicativa": {
+      "type": "enumeration",
+      "enum": [
+        "Livre",
+        "Dez Anos",
+        "Doze Anos",
+        "Quatorze Anos",
+        "Desesseis Anos",
+        "Dezoito Anos"
+      ]
+    },
+    "ators": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ator.ator",
+      "mappedBy": "serie"
+    },
+    "palavras_chave": {
+      "type": "customField",
+      "customField": "plugin::tagsinput.tags"
+    },
+    "generos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::genero.genero",
+      "mappedBy": "serie"
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "idioma_original": {
+      "type": "string"
+    },
+    "streams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stream.stream",
+      "mappedBy": "serie"
+    },
+    "imagens": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
