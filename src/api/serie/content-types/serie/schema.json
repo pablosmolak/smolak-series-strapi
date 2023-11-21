@@ -34,8 +34,7 @@
     "ators": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::ator.ator",
-      "mappedBy": "serie"
+      "target": "api::ator.ator"
     },
     "palavras_chave": {
       "type": "customField",
@@ -60,15 +59,16 @@
       "target": "api::stream.stream",
       "mappedBy": "serie"
     },
-    "imagens": {
+    "imagens_serie": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

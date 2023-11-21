@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ator",
     "pluralName": "ators",
-    "displayName": "ator"
+    "displayName": "ator",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,22 +16,16 @@
       "type": "string",
       "required": true
     },
-    "fotos": {
+    "foto_ator": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
-    },
-    "serie": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::serie.serie",
-      "inversedBy": "ators"
+      ]
     }
   }
 }

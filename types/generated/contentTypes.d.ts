@@ -683,18 +683,14 @@ export interface ApiAtorAtor extends Schema.CollectionType {
     singularName: 'ator';
     pluralName: 'ators';
     displayName: 'ator';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     nome: Attribute.String & Attribute.Required;
-    fotos: Attribute.Media & Attribute.Required;
-    serie: Attribute.Relation<
-      'api::ator.ator',
-      'manyToOne',
-      'api::serie.serie'
-    >;
+    foto_ator: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -784,7 +780,7 @@ export interface ApiSerieSerie extends Schema.CollectionType {
       'oneToMany',
       'api::stream.stream'
     >;
-    imagens: Attribute.Media;
+    imagens_serie: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
